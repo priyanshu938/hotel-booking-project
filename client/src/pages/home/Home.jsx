@@ -11,15 +11,15 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <Header />
+      <Header/>
       <div className="homeContainer">
-        <Featured />
-        <div className="homeTitle">Browse by property type</div>
-        <PropertyList />
-        <h1 className="homeTitle">Home guests love</h1>
-        <FeaturedProperties />
-        <MailList />
-        <Footer />
+        <Featured/>
+        <h1 className="homeTitle">Browse by property type</h1>
+        <PropertyList/>
+        <h1 className="homeTitle">Homes guests love</h1>
+        <FeaturedProperties/>
+        <MailList/>
+        <Footer/>
       </div>
     </div>
   );

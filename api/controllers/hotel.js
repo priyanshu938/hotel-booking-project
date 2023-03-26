@@ -40,12 +40,12 @@ export const getHotel = async (req, res, next) => {
   }
 };
 export const getHotels = async (req, res, next) => {
-  const { min, max, limit, ...others } = req.query;
+  const { min, max, ...others } = req.query;
   try {
     const hotels = await Hotel.find({
       ...others,
       cheapestPrice: { $gt: min | 1, $lt: max || 999 },
-    }).limit(limit);
+    }).limit(req.query.limit);
     res.status(200).json(hotels);
   } catch (err) {
     next(err);
@@ -92,7 +92,7 @@ export const getHotelRooms = async (req, res, next) => {
         return Room.findById(room);
       })
     );
-    res.status(200).json(list);
+    res.status(200).json(list)
   } catch (err) {
     next(err);
   }
